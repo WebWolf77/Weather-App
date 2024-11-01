@@ -12,11 +12,11 @@ body{
 .card{
     width: 90%;
     max-width: 470px;
-    background: linear-gradient(135deg, #00feba, #5b548a);
+    background: linear-gradient(135deg, #01afff, #c9cde9dd);
     color: #fff;
     margin: 100px auto 0;
     border-radius: 20px;
-    padding: 40px 35px;
+    padding: 40px 20px;
     text-align: center;
 }
 
@@ -36,7 +36,7 @@ body{
     height: 60px;
     border-radius: 30px;
     flex: 1;
-    margin-right: 16px;
+    margin-right: 10px;
     font-size: 18px;
 }
 
@@ -44,7 +44,7 @@ body{
     border: 0;
     outline: 0;
     background: #ebfffc;
-    border-radius: 50%;
+    border-radius: 35%;
     width: 60px;
     height: 60px;
     cursor: pointer;
@@ -55,17 +55,17 @@ body{
 }
 
 .weathr-icon {
-    width: 170px;
+    width: 120px;
     margin-top: 30px;
 }
 
 .weather h1{
-    font-size: 80px;
+    font-size: 60px;
     font-weight: 500;
 }
 
 .weather h2{
-    font-size: 45px;
+    font-size: 30px;
     font-weight: 400;
     margin-top: -10px;
 }
@@ -74,8 +74,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
-    margin-top: 50px;
+    padding: 0 10px;
+    margin-top: 30px;
 }
 .col{
     display: flex;
@@ -84,13 +84,13 @@ body{
 }
 
 .col img{
-    width: 40px;
-    margin-right: 10px;
+    width: 30px;
+    margin-right: 5px;
 }
 
 .humidity, .wind{
-    font-size:28px;
-    margin-top: -6px;
+    font-size:32px;
+    margin-top: -8px;
 }
 
 .weather{
@@ -103,4 +103,39 @@ body{
     font-size: 14px;
     margin-top: 10px;
     display: none;
+}
+
+
+/*Media Query for mobile devices*/
+@media (max-width: 480px) {
+    .card {
+        padding: 20px 15px;
+    }
+
+    .search input {
+        font-size: 14px;
+        padding: 8px 15px;
+        height: 45px;
+    }
+
+    .search button {
+        width: 45px;
+        height: 45px;
+    }
+
+    .weather h1 {
+        font-size: 3rem;
+    }
+
+    .weather h2 {
+        font-size: 1.8rem;
+    }
+
+    .weather-icon {
+        width: 100px;
+    }
+
+    .humidity, .wind {
+        font-size: 20px;
+    }
 }

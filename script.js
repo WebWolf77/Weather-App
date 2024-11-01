@@ -1,14 +1,17 @@
+
+//Api Key for accessing OpenWeatherApp
 const apiKey = "fd27c379838760343226e3624146bf2b";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
-
+//Dom elements for search input, button, and weather icon
 const searchBox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
 const weatherIcon = document.querySelector(".weather-icon");
 
 async function checkWeather(city){
-    const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
     
+    const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+    //check if the city is not found
     if(response.status == 404) {
         document.querySelector(".error").style.display = "block";
         document.querySelector(".weather").style.display = "none";
@@ -20,6 +23,7 @@ document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°c";
 document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
 document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
 
+//Set weather icon based on the main weather description
 if(data.weather[0].main == "Clouds"){
     weatherIcon.src = "images/clouds.png";
 }
@@ -42,7 +46,7 @@ document.querySelector(".error").style.display = "none";
 
 }
 
-
+//Added Click and Enter for user actions
 searchBtn.addEventListener("click", ()=>{
     checkWeather(searchBox.value);
 })
